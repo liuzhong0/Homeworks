@@ -1,0 +1,85 @@
+# Homeworks
+Redrock
+public class Demo {
+    public static void main(String[] args) {
+        String Gana = "acbdw,1269547,AASIDX,AIUydjs,12sjaA,3819247,ausSHSzio,IUFISsi";
+        DaXiaoXie(splited((Gana)));
+        ShuZi((splited((Gana))));
+        AllinONE((splited((Gana))));
+    }
+
+    public static String[] splited(String a) {
+        String[] b = a.split(",");
+        return b;
+    }
+
+    public static void DaXiaoXie(String[] a) {
+        int n = 0;
+        for (String x; n < a.length; n++) {
+            x = a[n];
+            int b = 0, c = 0;
+            int d[]=new int[a.length];
+            for (int i = 0; i < x.length(); i++) {
+                char m = x.charAt(i);
+                if (Character.isUpperCase(x.charAt(i))) {
+                    b++;
+                }
+                if (Character.isLowerCase(x.charAt(i))) {
+                    c++;
+                }
+            }
+            if (b == x.length()) {
+                System.out.println(x + "字符串中元素都是大写字母");
+            }
+            if (c == x.length()) {
+                System.out.println(x + "字符串中元素都是小写字母");
+            }
+        }
+    }
+    public static void ShuZi(String[] c) {
+        int n = 0;
+        for (String x; n < c.length; n++) {
+            x = c[n];
+            int b = 0;
+            for (int i = 0; i < x.length(); i++) {
+                char a = x.charAt(i);
+                if (a >= 48 & a <= 57) {
+                    b++;
+                }
+            }
+            if (b == x.length()) {
+                System.out.println(x + "字符串中元素都是数字");
+
+            }
+        }
+    }
+
+    public static void AllinONE(String[] a)
+    {
+        int n = 0;
+        for (String x; n < a.length; n++)
+        {
+            x = a[n];
+            int b = 0, c = 0;
+            for (int i = 0; i < x.length(); i++) {
+                char m = x.charAt(i);
+                if (Character.isUpperCase(x.charAt(i))) {
+                    b++;
+                }
+                if (Character.isLowerCase(x.charAt(i))) {
+                    c++;
+                }
+            }
+            if ((b+c)==x.length()&b!=0&c!=0){
+                System.out.print("这串字符有大写有小写字母，全部转换为大写字母后是");
+                for (int i = 0; i < x.length(); i++) {
+                    char m = x.charAt(i);
+                    char d=Character.isUpperCase(m)? (m):(m-=32);
+                    System.out.print(d);
+                }
+                System.out.println();
+            }
+        }
+    }
+}
+
